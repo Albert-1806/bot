@@ -24,6 +24,21 @@ async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
 
+@bot.command()
+async def mem(ctx):
+    img_name = random.choice(os.listdir('M2L1\Imagenes'))
+    with open(f'M2L1\Imagenes/{img_name}', 'rb') as f:
+        picture = discord.File(f)
+ 
+    await ctx.send(file=picture)
+
+@bot.command()
+async def mem_ani(ctx):
+    img_name = random.choice(os.listdir('M2L1\eni'))
+    with open(f'M2L1\eni/{img_name}', 'rb') as f:
+        picture = discord.File(f)
+ 
+    await ctx.send(file=picture)
 
 @bot.group()
 async def cool(ctx):
